@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spotify Playback</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .player {
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      text-align: center;
+      max-width: 400px;
+      width: 90%;
+    }
+
+    .album-art {
+      width: 200px;
+      height: 200px;
+      margin-bottom: 20px;
+    }
+
+    .controls {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .button {
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 50%;
+      padding: 10px;
+      cursor: pointer;
+    }
+
+    .button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+
+<div class="player">
+  <img class="album-art" src="album_art.gif" alt="Album Art">
+  <h2>Song Title</h2>
+  <p>Artist Name</p>
+  <audio id="audioPlayer" src="song.mp3"></audio>
+  <div class="controls">
+    <button class="button" onclick="previousTrack()">&#9664;</button>
+    <button class="button" id="playPauseButton" onclick="togglePlayPause()">▶️</button>
+    <button class="button" onclick="nextTrack()">&#9654;</button>
+  </div>
+</div>
+
+<script>
+  let isPlaying = false;
+  const playPauseButton = document.getElementById('playPauseButton');
+  const audioPlayer = document.getElementById('audioPlayer');
+
+  function togglePlayPause() {
+    if (isPlaying) {
+      audioPlayer.pause();
+      isPlaying = false;
+      playPauseButton.textContent = '▶️';
+    } else {
+      audioPlayer.play();
+      isPlaying = true;
+      playPauseButton.textContent = '⏸️';
+    }
+  }
+
+  function previousTrack() {
+    // Implement logic for previous track
+    console.log('Previous Track');
+  }
+
+  function nextTrack() {
+    // Implement logic for next track
+    console.log('Next Track');
+  }
+</script>
+
+</body>
+</html>
